@@ -11,9 +11,11 @@
     - npm i -D react-router-dom
     - set up the main component as <Body /> in app.js
     - Set the path in the Body component using createBrowserRouter and RouterProvider methods
+- Routing
 - Header Component
 - Login Form
 - Signup Form
+- signup form validation 
 
 ## Features
 -   Login .signup page

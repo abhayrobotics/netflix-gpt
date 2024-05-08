@@ -1,12 +1,41 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Header from "./Header";
+
+import { ValidateForm } from "../utils/ValidateForm";
 
 const Login =()=>{
 
     const [signup,setSignUp] =useState(false)
+
+    // checking the user request to sign in //sign up and changing accordingly
     const signUpFunction =()=>{
             setSignUp(!signup)
     }
+
+    // Email Validation using validateForm function which check the regex
+    
+
+        let name1 = useRef(null)
+
+    
+    const email = useRef(null)
+    const password = useRef(null)
+    const handleValidate =()=>{
+
+        
+        console.log(name1.current,email.current.value,password.current.value)
+        if(!signup){
+            name1=email 
+        }
+        
+        const errorMessage = ValidateForm(name1.current.value,email.current.value,password.current.value);
+        // const errorMessage = ValidateForm("okay",email.current.value,password.current.value);
+        console.log(errorMessage)
+    }
+
+
+
+
     return(
         <div className="relative">
            <Header />
@@ -17,17 +46,17 @@ const Login =()=>{
            </div>
 
            {/* Login form */}
-            <form className="absolute top-28 left-1/3 p-16  w-3/12 min-w-96  text-white z-10 bg-black  opacity-85 ">
+            <form onSubmit={(e)=> e.preventDefault()} className="absolute top-28 left-1/3 p-16  w-3/12 min-w-96  text-white z-10 bg-black  opacity-85 ">
 
                 <h2 className="mb-6 text-3xl font-bold">{signup===true?"Sign Up":"Sign In"}</h2>
                 {/* if signup true then execute else ignore */}
                 {signup && 
-                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Name" />}
-                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Email or mobile number" />
+                <input  ref={name1} className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Name" />}
+                <input ref={email} className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Email or mobile number" />
 
-                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light"type="password" placeholder="Password" />
+                <input ref={password} className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light"type="password" placeholder="Password" />
 
-                <button className="text-wite w-full bg-red-700 my-2 py-2 opacity-100 rounded">{signup===true?"Sign Up":"Sign In"}</button>
+                <button className="text-wite w-full bg-red-700 my-2 py-2 opacity-100 rounded" onClick={handleValidate}>{signup===true?"Sign Up":"Sign In"}</button>
                 {signup===true?
                 
                 (<div>Already a user?<span className="font-bold cursor-pointer hover:underline" onClick={signUpFunction}> Sign In now</span></div>)
