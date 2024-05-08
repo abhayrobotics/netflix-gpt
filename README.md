@@ -2,11 +2,15 @@
 
 ## Setup
 - npx create-react-app
-    - delete the icon, test.js file and css code
+    - delete the icon, test.js file and app.css code
 
 - configure tailwind from website steps
     - follow https://tailwindcss.com/docs/guides/create-react-app
 
+- configure react-router-dom
+    - npm i -D react-router-dom
+    - set up the main component as <Body /> in app.js
+    - Set the path in the Body component using createBrowserRouter and RouterProvider methods
 
 ## Features
 -   Login .signup page
