@@ -1,6 +1,12 @@
+import { useState } from "react";
 import Header from "./Header";
 
 const Login =()=>{
+
+    const [signup,setSignUp] =useState(false)
+    const signUpFunction =()=>{
+            setSignUp(!signup)
+    }
     return(
         <div className="relative">
            <Header />
@@ -13,14 +19,22 @@ const Login =()=>{
            {/* Login form */}
             <form className="absolute top-28 left-1/3 p-16  w-3/12 min-w-96  text-white z-10 bg-black  opacity-85 ">
 
-                <h2 className="mb-4 text-3xl font-bold">Sign In</h2>
+                <h2 className="mb-6 text-3xl font-bold">{signup===true?"Sign Up":"Sign In"}</h2>
+                {/* if signup true then execute else ignore */}
+                {signup && 
+                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Name" />}
+                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Email or mobile number" />
 
-                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-400 font-light" type="text" placeholder="Email or mobile number" />
+                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light"type="password" placeholder="Password" />
 
-                <input className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-400 font-light"type="password" placeholder="Password" />
-
-                <button className="w-full bg-red-700 my-2 py-2 opacity-100 rounded">Sign In</button>
+                <button className="text-wite w-full bg-red-700 my-2 py-2 opacity-100 rounded">{signup===true?"Sign Up":"Sign In"}</button>
+                {signup===true?
+                
+                (<div>Already a user?<span className="font-bold cursor-pointer hover:underline" onClick={signUpFunction}> Sign In now</span></div>)
+                :(<div>New to Netflix ?<span className="font-bold cursor-pointer hover:underline" onClick={signUpFunction}> Sign up now</span></div>)}
+                
             </form>
+
 
         </div>
     )
