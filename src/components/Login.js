@@ -5,7 +5,8 @@ import { ValidateForm } from "../utils/ValidateForm";
 
 const Login =()=>{
 
-    const [signup,setSignUp] =useState(false)
+    const [signup,setSignUp] =useState(false);
+    const [errorMessage,setErrorMessage]= useState(null)
 
     // checking the user request to sign in //sign up and changing accordingly
     const signUpFunction =()=>{
@@ -23,14 +24,12 @@ const Login =()=>{
     const handleValidate =()=>{
 
         
-        console.log(name1.current,email.current.value,password.current.value)
-        if(!signup){
-            name1=email 
-        }
-        
-        const errorMessage = ValidateForm(name1.current.value,email.current.value,password.current.value);
+        // name is passed as raw as this willbe checked only sigup will be clicked
+        const error = ValidateForm(name1,email.current.value,password.current.value,signup);
         // const errorMessage = ValidateForm("okay",email.current.value,password.current.value);
-        console.log(errorMessage)
+        // console.log(error)
+
+        setErrorMessage(error)
     }
 
 
@@ -46,7 +45,7 @@ const Login =()=>{
            </div>
 
            {/* Login form */}
-            <form onSubmit={(e)=> e.preventDefault()} className="absolute top-28 left-1/3 p-16  w-3/12 min-w-96  text-white z-10 bg-black  opacity-85 ">
+            <form onSubmit={(e)=> e.preventDefault()} className="absolute top-28 left-1/3 p-16  w-3/12 min-w-96 rounded-lg text-white z-10 bg-black  bg-opacity-80 ">
 
                 <h2 className="mb-6 text-3xl font-bold">{signup===true?"Sign Up":"Sign In"}</h2>
                 {/* if signup true then execute else ignore */}
@@ -55,8 +54,10 @@ const Login =()=>{
                 <input ref={email} className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light" type="text" placeholder="Email or mobile number" />
 
                 <input ref={password} className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light"type="password" placeholder="Password" />
-
-                <button className="text-wite w-full bg-red-700 my-2 py-2 opacity-100 rounded" onClick={handleValidate}>{signup===true?"Sign Up":"Sign In"}</button>
+                
+                {/* error message display */}
+                <div className="font-semibold text-red-700 ">{errorMessage}</div>
+                <button className="text-wite w-full bg-red-700 my-2 py-2  rounded" onClick={handleValidate}>{signup===true?"Sign Up":"Sign In"}</button>
                 {signup===true?
                 
                 (<div>Already a user?<span className="font-bold cursor-pointer hover:underline" onClick={signUpFunction}> Sign In now</span></div>)
