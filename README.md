@@ -26,6 +26,7 @@
     
     - npm run build
     - firebase deploy
+    - firebase authentication
 
 ## Features
 -   Login .signup page
