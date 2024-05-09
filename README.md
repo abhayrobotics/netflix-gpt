@@ -15,7 +15,17 @@
 - Header Component
 - Login Form
 - Signup Form
-- signup form validation 
+- signup form validation using regex and useRef hook
+- hosting using firebase hosting
+    - npm install -g firebase-tools
+    - firebase login
+    - firebase init
+        - deploy  (optionally github action)
+        - public directory to be :build
+        - single page app -NO
+    
+    - npm run build
+    - firebase deploy
 
 ## Features
 -   Login .signup page
