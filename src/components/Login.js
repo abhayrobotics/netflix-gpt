@@ -2,7 +2,10 @@ import { useRef, useState } from "react";
 import Header from "./Header";
 
 import { ValidateForm } from "../utils/ValidateForm";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
 import { auth } from "../utils/firebase";
 
 const Login = () => {
@@ -35,9 +38,9 @@ const Login = () => {
     if (errorMessage) return;
 
     // else in all case authentication
+
     if (signup) {
-        
-        // signup logic ie create user
+      // signup logic ie create user
       createUserWithEmailAndPassword(
         auth,
         email.current.value,
@@ -46,15 +49,28 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up resolve Promise
           const user = userCredential.user;
-            console.log(user)
+          console.log(user);
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessageAuth = error.message;
-          console.log(errorCode+ ":- " + errorMessageAuth)
+          setErrorMessage(errorMessageAuth)
+          console.log(errorCode + ":- " + errorMessageAuth);
         });
-    }else{
-        // sign in Logic
+    } 
+    else {
+      // sign in Logic     
+      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+        .then((userCredential) => {
+          // Signed in
+          const user = userCredential.user;
+          console.log(user)
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessageSignIn = error.message;
+            setErrorMessage(errorMessageSignIn)
+        });
     }
   };
 
