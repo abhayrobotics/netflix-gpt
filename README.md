@@ -25,8 +25,13 @@
         - single page app -NO
     
     - npm run build
-    - firebase deploy
-    - firebase authentication
+- firebase deploy
+- firebase authentication
+    -  firebase sign up createUser... 
+    -  firebase sign in create ...
+-  install Redux and itds toolkit
+    - npm i react-redux
+    - npm i -D @reduxjs/toolkit 
 
 ## Features
 -   Login .signup page
