@@ -1,12 +1,13 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 
-import { ValidateForm } from "../utils/ValidateForm";
+
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { ValidateForm } from "../utils/ValidateForm";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
