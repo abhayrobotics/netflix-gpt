@@ -32,6 +32,7 @@
 -  install Redux and itds toolkit
     - npm i react-redux
     - npm i -D @reduxjs/toolkit 
+- created redux using user slice
 
 ## Features
 -   Login .signup page

@@ -51,6 +51,7 @@ const Login = () => {
           // Signed up resolve Promise
           const user = userCredential.user;
           console.log(user);
+          
         })
         .catch((error) => {
           const errorCode = error.code;
