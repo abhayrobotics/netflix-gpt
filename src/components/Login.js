@@ -1,24 +1,28 @@
 import { useRef, useState } from "react";
 import Header from "./Header";
 
-
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { ValidateForm } from "../utils/ValidateForm";
 import { useNavigate } from "react-router-dom";
+import { addUser } from "../utils/userSlice";
+import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
   const navigate = useNavigate();
+  const dispatch =useDispatch();
 
-  // checking the user request to sign in //sign up and changing accordingly
+  //! checking the user request to sign in //sign up and changing accordingly
   const signUpFunction = () => {
     setSignUp(!signup);
-  };
+   
+;  };
 
   // Email Validation using validateForm function which check the regex
 
@@ -27,7 +31,7 @@ const Login = () => {
   const password = useRef(null);
 
   const handleValidate = () => {
-    // name is passed as raw as this willbe checked only sigup will be clicked
+    // name is passed as raw as this will be checked only sigup will be clicked
     const error = ValidateForm(
       name1,
       email.current.value,
@@ -36,10 +40,12 @@ const Login = () => {
     );
     // displays the error message
     setErrorMessage(error);
-
-    // if error message then it is true then no authentication to be done
-    if (errorMessage) return;
-
+    console.log(errorMessage)
+   
+    //! if error message then it is true then no authentication to be done
+    if (errorMessage) {
+      return;
+    }
     // else in all case authentication
 
     if (signup) {
@@ -50,32 +56,53 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed up resolve Promise
           const user = userCredential.user;
           console.log(user);
-          navigate("/browse");
-          
+          // console.log("sign up success")
+
+          // ! update user data
+          updateProfile(user, {
+            displayName: name1.current.value,
+            photoURL: "https://avatars.githubusercontent.com/u/58120166?v=4",
+          })
+            .then(() => {
+              const {uid, email, displayName,photoURL}=user;
+              dispatch(
+                addUser({ uid: uid, email: email, displayName: displayName ,photoURL:photoURL})
+              );
+
+              // navigate if signup success and profile updated
+              navigate("/browse");
+            })
+            .catch((error) => {
+              // console.log(error)
+              setErrorMessage(error);
+            });
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessageAuth = error.message;
-          setErrorMessage(errorMessageAuth)
+          setErrorMessage(errorMessageAuth);
           console.log(errorCode + ":- " + errorMessageAuth);
         });
-    } 
-    else {
-      // sign in Logic     
-      signInWithEmailAndPassword(auth, email.current.value, password.current.value)
+    } else {
+      // sign in Logic
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
+          console.log("sign in success");
           navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
           const errorMessageSignIn = error.message;
-            setErrorMessage(errorMessageSignIn)
+          setErrorMessage(errorCode + ": " + errorMessageSignIn);
         });
     }
   };

@@ -33,6 +33,8 @@
     - npm i react-redux
     - npm i -D @reduxjs/toolkit 
 - created redux using user slice
+- implemented signout
+
 
 ## Features
 -   Login .signup page
@@ -41,6 +43,7 @@
 
 -   browse (after authentication for log in user)
     - Header
+        - user photo
     - Main Movie
         - trailer in background
         - Title in description
