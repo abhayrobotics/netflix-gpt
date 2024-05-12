@@ -8,10 +8,12 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { ValidateForm } from "../utils/ValidateForm";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
 
   // checking the user request to sign in //sign up and changing accordingly
   const signUpFunction = () => {
@@ -51,6 +53,7 @@ const Login = () => {
           // Signed up resolve Promise
           const user = userCredential.user;
           console.log(user);
+          navigate("/browse");
           
         })
         .catch((error) => {
@@ -66,7 +69,8 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user)
+          console.log(user);
+          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
