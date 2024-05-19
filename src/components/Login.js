@@ -11,7 +11,7 @@ import { ValidateForm } from "../utils/ValidateForm";
 
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
-import { userAvatar } from "../utils/constant";
+import { netflixbackground, userAvatar } from "../utils/constant";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
@@ -97,7 +97,7 @@ const Login = () => {
           const user = userCredential.user;
           console.log(user);
           // console.log("sign in success");
-        
+
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -115,7 +115,7 @@ const Login = () => {
       <div>
         <img
           className="min-h-screen object-cover "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/d253acf4-a1e2-4462-a416-f78802dc2d85/f04bf88c-f71c-4d02-82ed-adb870b8f8db/IN-en-20240429-POP_SIGNUP_TWO_WEEKS-perspective_WEB_658a042e-62cf-473d-8da0-7b875f23e2ef_large.jpg"
+          src={netflixbackground}
           alt="backgound"
         />
       </div>

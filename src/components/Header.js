@@ -32,10 +32,10 @@ const Header = () => {
     const unSubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in
-          const {uid, email, displayName}=user;
+          const {uid, email, displayName,photoURL}=user;
 
         //   dispacth an action using reducer fn()
-        dispatch(addUser({uid: uid,email:email,displayName: displayName}));
+        dispatch(addUser({uid: uid,email:email,displayName: displayName ,photoURL:photoURL}));
 
         // navigating to browse page
         navigate('/browse')

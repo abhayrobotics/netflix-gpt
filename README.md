@@ -1,5 +1,14 @@
 # Netflix GPT
 
+## Stack used
+-   React
+-   react-rounter-dom for navigation
+-   Tailwind for Styling
+-   React-redux for store
+-   Firebase Authentication
+-   Firebase Hosting
+-   TMDB API for Movie data
+
 ## Setup
 - npx create-react-app
     - delete the icon, test.js file and app.css code
