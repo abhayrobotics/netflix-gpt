@@ -8,14 +8,14 @@ import {
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { ValidateForm } from "../utils/ValidateForm";
-import { useNavigate } from "react-router-dom";
+
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
-  const navigate = useNavigate();
+ 
   const dispatch =useDispatch();
 
   //! checking the user request to sign in //sign up and changing accordingly
@@ -71,8 +71,7 @@ const Login = () => {
                 addUser({ uid: uid, email: email, displayName: displayName ,photoURL:photoURL})
               );
 
-              // navigate if signup success and profile updated
-              navigate("/browse");
+             
             })
             .catch((error) => {
               // console.log(error)
@@ -96,8 +95,8 @@ const Login = () => {
           // Signed in
           const user = userCredential.user;
           console.log(user);
-          console.log("sign in success");
-          navigate("/browse");
+          // console.log("sign in success");
+        
         })
         .catch((error) => {
           const errorCode = error.code;

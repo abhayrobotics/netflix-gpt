@@ -34,7 +34,9 @@
     - npm i -D @reduxjs/toolkit 
 - created redux using user slice
 - implemented signout
--
+- Redirectig to the relevant page , if log in/out  and not be url/location. enchancing security using useNavigate()
+    - all navigating will be done in header component as it is present in all pages and inside the Router component.
+    
 
 
 ## Features

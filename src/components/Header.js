@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import userLogo from "../assets/user.png";
 import { auth } from "../utils/firebase";
-import { signOut } from "firebase/auth";
+import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { addUser,removeUser } from "../utils/userSlice";
 
 const Header = () => {
+  const dispatch = useDispatch()
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   // console.log(user);
@@ -22,6 +24,30 @@ const Header = () => {
         console.log(error);
       });
   };
+
+  // handles chnage in auth state
+  useEffect(()=>{
+
+    onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // User is signed in
+          const {uid, email, displayName}=user;
+
+        //   dispacth an action using reducer fn()
+        dispatch(addUser({uid: uid,email:email,displayName: displayName}));
+
+        // navigating to browse page
+        navigate('/browse')
+         
+        } else {
+          // User is signed out
+          dispatch(removeUser());
+          navigate('/')
+
+          
+        }
+      });
+},[])
   return (
     <div>
       <div className="  absolute z-20 w-screen py-1 pl-36 px-4 bg-gradient-to-b from-black  flex justify-between ">
