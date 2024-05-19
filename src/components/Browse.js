@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 import Header from "./Header";
 import { TMDB_Options } from "../utils/constant";
+import { addNowPlayingMovies } from "../utils/movieSlice";
+import { useDispatch } from "react-redux";
 
 const Browse =()=>{
+
+    const dispatch = useDispatch()
 
     useEffect(()=>{
         getNowplayingMovies();
@@ -13,6 +17,7 @@ const Browse =()=>{
         const nowplaying = await data.json();
 
         console.log(nowplaying.results)
+        dispatch(addNowPlayingMovies(nowplaying.results))
 
     }
     return(
