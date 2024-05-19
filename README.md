@@ -21,7 +21,7 @@
     - firebase login
     - firebase init
         - deploy  (optionally github action)
-        - public directory to be :build
+        - public directory to be :build 
         - single page app -NO
     
     - npm run build
@@ -36,7 +36,8 @@
 - implemented signout
 - Redirectig to the relevant page , if log in/out  and not be url/location. enchancing security using useNavigate()
     - all navigating will be done in header component as it is present in all pages and inside the Router component.
-    
+- unsubscribe to the onAuthStateChange .
+
 
 
 ## Features

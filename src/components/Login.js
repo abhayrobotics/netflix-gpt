@@ -11,6 +11,7 @@ import { ValidateForm } from "../utils/ValidateForm";
 
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
+import { userAvatar } from "../utils/constant";
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
@@ -63,7 +64,7 @@ const Login = () => {
           // ! update user data
           updateProfile(user, {
             displayName: name1.current.value,
-            photoURL: "https://avatars.githubusercontent.com/u/58120166?v=4",
+            photoURL: userAvatar,
           })
             .then(() => {
               const {uid, email, displayName,photoURL}=user;

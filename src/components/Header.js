@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import userLogo from "../assets/user.png";
+import {NetflixLogo} from '../utils/constant'
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -28,7 +29,7 @@ const Header = () => {
   // handles chnage in auth state
   useEffect(()=>{
 
-    onAuthStateChanged(auth, (user) => {
+    const unSubscribe = onAuthStateChanged(auth, (user) => {
         if (user) {
           // User is signed in
           const {uid, email, displayName}=user;
@@ -47,13 +48,16 @@ const Header = () => {
           
         }
       });
+
+      // unsubscribe when the component unmounts
+      return ()=> unSubscribe();
 },[])
   return (
     <div>
       <div className="  absolute z-20 w-screen py-1 pl-36 px-4 bg-gradient-to-b from-black  flex justify-between ">
         <img
           className="w-[184px]"
-          src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png"
+          src= {NetflixLogo}
           alt="logo"
         />
 
