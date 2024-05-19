@@ -71,7 +71,7 @@ const Header = () => {
                 user.photoURL}
               alt="user icon"
             />
-            <div className="font-bold text-lg text-white">Sign Out</div>
+            <div className="font-bold text-lg text-white pr-8">Sign Out</div>
           </div>
         )}
       </div>

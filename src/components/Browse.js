@@ -11,7 +11,7 @@ const Browse =()=>{
     useNowPlayingMovies();
     
     return(
-        <div className="bg-slate-600 h-screen">
+        <div className=" h-screen">
 
         <Header />
         <MainContainer/>
