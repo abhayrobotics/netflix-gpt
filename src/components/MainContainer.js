@@ -1,4 +1,6 @@
 import { useSelector } from "react-redux"
+import TitleContainer from "./TitleContainer";
+import VideoBackground from "./VideoBackground";
 
 const MainContainer = () => {
     // fetchin data from movieslice using useSelector
@@ -11,9 +13,13 @@ const MainContainer = () => {
     // else render
     console.log(movies[0])
 
+    const {title,overview} =movies[0]
+
   return (
     <div>
-        <div>MainContainer</div>
+        <TitleContainer title={title} overview={overview}  />
+        <VideoBackground />
+
     </div>
   )
 }

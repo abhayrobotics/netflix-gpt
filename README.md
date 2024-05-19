@@ -61,11 +61,12 @@
 -   browse (after authentication for log in user)
     - Header
         - user photo
+
     - Main Movie <MainContainer />
-        - Video background
-        - Title in description
-        - play controls
-        - MOvie Suggestion
+        - <VideoBackground />
+        - <TitleContainer />
+            - Title in description
+            - play controls
     - <MovieListContainer />
         - movies * n
         - card * n
@@ -73,3 +74,9 @@
 -   Netlfix Gpt
     -   Search Bar
     -   Movie suggestion
+
+## Standard proprrties
+-   text x-margin- mx-8
+-   text y-margin- mx-4
+-   button px-10 py-1
+
