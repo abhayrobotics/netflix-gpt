@@ -50,6 +50,7 @@
 - Redirectig to the relevant page , if log in/out  and not be url/location. enchancing security using useNavigate()
     - all navigating will be done in header component as it is present in all pages and inside the Router component.
 - unsubscribe to the onAuthStateChange .
+- 
 
 
 
@@ -73,10 +74,14 @@
 
 -   Netlfix Gpt
     -   Search Bar
-    -   Movie suggestion
+    -   Movie suggestion .
 
 ## Standard proprrties
 -   text x-margin- mx-8
 -   text y-margin- mx-4
 -   button px-10 py-1
 
+
+
+## pending features
+-   icons

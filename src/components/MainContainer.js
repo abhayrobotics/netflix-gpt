@@ -13,12 +13,13 @@ const MainContainer = () => {
     // else render
     console.log(movies[0])
 
-    const {title,overview} =movies[0]
+    const {title,overview,id} =movies[0]
 
   return (
     <div>
         <TitleContainer title={title} overview={overview}  />
-        <VideoBackground />
+        <VideoBackground id ={id}/>
+       
 
     </div>
   )
