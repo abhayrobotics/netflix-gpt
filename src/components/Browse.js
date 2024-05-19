@@ -1,30 +1,21 @@
-import { useEffect } from "react";
+
+import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import Header from "./Header";
-import { TMDB_Options } from "../utils/constant";
-import { addNowPlayingMovies } from "../utils/movieSlice";
-import { useDispatch } from "react-redux";
+import MainContainer from "./MainContainer";
+import MovieListContainer from "./MovieListContainer";
+
 
 const Browse =()=>{
 
-    const dispatch = useDispatch()
-
-    useEffect(()=>{
-        getNowplayingMovies();
-    },[])
-
-    const getNowplayingMovies = async ()=>{
-        const data = await fetch('https://api.themoviedb.org/3/movie/now_playing?page=1', TMDB_Options)
-        const nowplaying = await data.json();
-
-        console.log(nowplaying.results)
-        dispatch(addNowPlayingMovies(nowplaying.results))
-
-    }
+    // custom hook for fetching now playing movies
+    useNowPlayingMovies();
+    
     return(
-        <div className="bg-slate-700 h-screen">
+        <div className=" h-screen">
 
         <Header />
-        <h1>Browse component</h1>
+        <MainContainer/>
+        <MovieListContainer />
         </div>
     )
 

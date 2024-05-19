@@ -61,10 +61,15 @@
 -   browse (after authentication for log in user)
     - Header
         - user photo
-    - Main Movie
-        - trailer in background
+    - Main Movie <MainContainer />
+        - Video background
         - Title in description
+        - play controls
         - MOvie Suggestion
+    - <MovieListContainer />
+        - movies * n
+        - card * n
+
 -   Netlfix Gpt
     -   Search Bar
     -   Movie suggestion
