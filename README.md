@@ -7,7 +7,11 @@
 -   React-redux for store
 -   Firebase Authentication
 -   Firebase Hosting
--   TMDB API for Movie data
+-   TMDB API for Movie data 
+    - Setup VPN (currently tmdb not working)
+    - created account
+    - created a constant TMDBoption  with user api token.
+    - useEffect to fetch anasyncrounouse api call
 
 ## Setup
 - npx create-react-app
