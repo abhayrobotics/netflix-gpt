@@ -11,9 +11,9 @@ const MainContainer = () => {
     if(movies==null) return;
     
     // else render
-    console.log(movies[0])
+    console.log(movies[1])
 
-    const {title,overview,id} =movies[0]
+    const {title,overview,id} =movies[1]
 
   return (
     <div>
