@@ -63,6 +63,7 @@
 - embedded youtube video
 - tailwind classes to style
 - build "movie list container" ie movies slider
+- pending movie popular  hook
 
 
 
