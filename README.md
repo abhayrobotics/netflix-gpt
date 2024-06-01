@@ -50,9 +50,18 @@
 - Redirectig to the relevant page , if log in/out  and not be url/location. enchancing security using useNavigate()
     - all navigating will be done in header component as it is present in all pages and inside the Router component.
 - unsubscribe to the onAuthStateChange .
+- Register TMDB api and create and app and token
+- get data from TMDb "now playing movies"
+- custom hook for now playing movies
+-  create a movie slice
+- update store with movie slice
 - setting main browse page
     -Title component
     - video component
+- fetch data for trailer video
+- update store with trailer video
+- embedded youtube video
+- tailwind classes to style
 
 
 
