@@ -53,7 +53,7 @@ const Header = () => {
       return ()=> unSubscribe();
 },[])
   return (
-    <div className=" w-screen overflow-x-hidden">
+    <div className=" w-svw overflow-x-hidden">
       <div className="  absolute w-screen z-20 py-1 pl-36 px-4 bg-gradient-to-b from-black  flex justify-between ">
         <img
           className="w-[184px]"

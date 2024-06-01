@@ -11,7 +11,7 @@ const Browse =()=>{
     useNowPlayingMovies();
     
     return(
-        <div className=" ">
+        <div className=" overflow-x-hidden">
 
         <Header />
         <MainContainer/>
