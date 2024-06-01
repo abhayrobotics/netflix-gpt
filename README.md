@@ -62,6 +62,8 @@
 - update store with trailer video
 - embedded youtube video
 - tailwind classes to style
+- build "movie list container" ie movies slider
+
 
 
 
@@ -80,8 +82,9 @@
             - Title in description
             - play controls
     - <MovieListContainer />
-        - movies * n
-        - card * n
+        - movieslist - popular *n
+            - MovieCard * n
+        - 
 
 -   Netlfix Gpt
     -   Search Bar

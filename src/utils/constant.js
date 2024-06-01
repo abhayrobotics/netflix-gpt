@@ -7,6 +7,8 @@ export const netflixbackground = "https://assets.nflxext.com/ffe/siteui/vlv3/d25
 
 export const userAvatar = "https://avatars.githubusercontent.com/u/58120166?v=4";
 
+export const Poster_URL = "https://image.tmdb.org/t/p/w500"
+
 
 // APi Contstant
 

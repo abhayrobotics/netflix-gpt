@@ -11,7 +11,7 @@ const MainContainer = () => {
     if(movies==null) return;
     
     // else render
-    console.log(movies[1])
+    // console.log(movies[1])
 
     const {title,overview,id} =movies[1]
 
