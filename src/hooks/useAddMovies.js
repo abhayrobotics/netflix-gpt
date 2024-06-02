@@ -15,7 +15,7 @@ const useAddMovies =(Url,addMoviesCategory)=>{
         const data = await fetch(Url, TMDB_Options)
         const json = await data.json();
 
-        console.log(json.results)
+        // console.log(json.results)
         dispatch(addMoviesCategory(json.results))
         
     };

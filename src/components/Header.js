@@ -8,12 +8,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 
 import { toggleGptSearch } from "../utils/searchSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
-  // console.log(user);
+  const gptSearchView = useSelector((store)=> store.search.gptSearchView)
+ 
 
   // handles signout
   const handleSignOut = () => {
@@ -32,6 +34,12 @@ const Header = () => {
   const handleSearch = ()=>{
     dispatch(toggleGptSearch())
   }
+
+  // handle language change
+  const handleLanguageChange =(e)=>{
+   
+    dispatch(changeLanguage(e.target.value))
+  } 
 
   // handles chnage in auth state
   useEffect(() => {
@@ -73,11 +81,15 @@ const Header = () => {
         {/* header icons show if user is not null */}
         {user && (
           <div className="flex">
-
-            {/* multi language */}
-            <select className=" text-sm h-fit p-1 my-auto mx-2 bg-black text-white">  
-              {SupportedLanguages?.map((item)=> <option className="" value={item.identifier}>{item.lang}</option> )}
+            
+            {/* show multi language only for gpt search page */}
+            
+            {gptSearchView &&(
+              <select className=" text-sm h-fit p-1 my-auto mx-2 bg-black text-white" onChange={handleLanguageChange}>  
+              {SupportedLanguages?.map((item)=> <option className="" value={item.identifier} key={item.identifier}>{item.lang}</option> )}
             </select>
+            )
+            }
 
 
             <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base text-white bg-green-700 rounded-lg">GPT Search </button>

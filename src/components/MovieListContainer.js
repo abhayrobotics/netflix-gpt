@@ -10,7 +10,7 @@ const MovieListContainer = () => {
   
   if (movies == null) return;
 
-  console.log(popularMovies);
+  // console.log(popularMovies);
 
 
   return (

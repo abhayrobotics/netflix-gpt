@@ -18,7 +18,7 @@ import GptSearch from "./GptSearch";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.search.gptSearchView);
-  console.log(gptSearchView);
+  // console.log(gptSearchView);
 
   // custom hook for fetching now playing movies
   useNowPlayingMovies();
