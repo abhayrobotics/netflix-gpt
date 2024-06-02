@@ -65,7 +65,9 @@
 - tailwind classes to style
 - build "movie list container" ie movies slider
 - created a generic hook for adding all types data in slider useAddMoviescategoryI(url, Popular)
-- Open AI GPT
+- GPt Search Button
+- GPT Slice in store with search view Action.
+- conditional showing of GPT Search page
 
 
 
@@ -102,3 +104,5 @@
 
 ## pending features
 -   icons
+-   video controls- mute
+-   
