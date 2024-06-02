@@ -1,8 +1,8 @@
 
 const TitleContainer = ({title,overview}) => {
   return (
-    <div className="pt-96 w-svw aspect-video px-10 absolute bg-gradient-to-r z-0 from-black">
-        <h2 className="font-bold text-6xl duration-1000  my-2 text-white">{title}</h2>   
+    <div className="pt-96 w-svw aspect-video pl-20 absolute bg-gradient-to-r z-0 from-black">
+        <h2 className=" __animateTitle  text-left font-bold  duration-1000  my-2 text-white">{title}</h2>   
         <p className="w-2/5 text-white">{overview}</p>   
         <div className="my-2"> 
         
