@@ -13,6 +13,7 @@
     - created a constant TMDBoption  with user api token.
     - useEffect to fetch anasyncrounouse api call
 -   Open AI GPT
+-   Multi language
 
 ## Setup
 - npx create-react-app
@@ -68,7 +69,10 @@
 - GPt Search Button
 - GPT Slice in store with search view Action.
 - conditional showing of GPT Search page
-
+- GPTSearch
+    - Search Bar
+    - Movie Suggestions
+- languages multilingual
 
 
 

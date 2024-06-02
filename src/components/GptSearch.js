@@ -1,8 +1,13 @@
+import MovieSuggestion from "./MovieSuggestion"
+import SearchBar from "./SearchBar"
 
 
 const GptSearch = () => {
   return (
-    <div>GptSearch</div>
+    <div>
+        <SearchBar />
+        <MovieSuggestion />
+    </div>
   )
 }
 
