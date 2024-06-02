@@ -10,9 +10,10 @@ export const userAvatar = "https://avatars.githubusercontent.com/u/58120166?v=4"
 export const Poster_URL = "https://image.tmdb.org/t/p/w500";
 
 export const now_playing_movies ="https://api.themoviedb.org/3/movie/now_playing";
-export const Popular_movies ="https://api.themoviedb.org/3/movie/popular";
-export const top_rated_movies ="https://api.themoviedb.org/3/movie/top_rated";
-export const upcoming_movies ="https://api.themoviedb.org/3/movie/upcoming";
+export const Popular_movies_URL ="https://api.themoviedb.org/3/movie/popular?page=1";
+export const top_rated_movies_URL ="https://api.themoviedb.org/3/movie/top_rated?page=1";
+export const upcoming_movies_URL ="https://api.themoviedb.org/3/movie/upcoming?page=1";
+export const webShows_URL = "https://api.themoviedb.org/3/genre/tv/list"
 
 
 // APi Contstant

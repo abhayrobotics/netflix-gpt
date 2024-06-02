@@ -63,7 +63,7 @@
 - embedded youtube video
 - tailwind classes to style
 - build "movie list container" ie movies slider
-- pending movie popular  hook
+- created a generic hook for adding all types data in slider useAddMoviescategoryI(url, Popular)
 
 
 

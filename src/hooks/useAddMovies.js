@@ -1,5 +1,8 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { TMDB_Options } from "../utils/constant";
 
-const useAddMovies =()=>{
+const useAddMovies =(Url,addMoviesCategory)=>{
 
     
     const dispatch = useDispatch()
@@ -8,12 +11,12 @@ const useAddMovies =()=>{
         getMovies();
     },[])
 
-    const getMovies = async (Url)=>{
+    const getMovies = async ()=>{
         const data = await fetch(Url, TMDB_Options)
         const json = await data.json();
 
-        // console.log(nowplaying.results)
-        dispatch(addNowPlayingMovies(json.results))
+        console.log(json.results)
+        dispatch(addMoviesCategory(json.results))
         
     };
 }

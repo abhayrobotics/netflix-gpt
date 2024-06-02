@@ -15,7 +15,7 @@
     .__animateTitle{
         animation-name: reduce ;
         animation-duration: 2000ms;
-        animation-delay: 2000ms;
+        animation-delay: 4000ms;
         animation-timing-function:ease-in;
         animation-fill-mode: forwards;
         /* transition-duration: 1000ms; */

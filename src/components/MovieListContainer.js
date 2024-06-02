@@ -4,18 +4,23 @@ import MovieList from "./MovieList";
 
 const MovieListContainer = () => {
   const movies = useSelector((store) => store.movies.nowPlayingMovies);
+  const popularMovies = useSelector((store) => store.movies.popular_movies);
+  const top_rated = useSelector((store)=>store.movies.top_rated_movies);
+  const upcoming = useSelector((store)=>store.movies.upcoming_movies)
+  
   if (movies == null) return;
 
-  console.log(movies);
+  console.log(popularMovies);
+
 
   return (
     <div className="  bg-black">
-      <div className="  -mt-40 relative z-10">
+      <div className="  -mt-72 relative z-10">
 
       <MovieList className="" movies={movies} title={"Now Playing Movies"} />
-      <MovieList movies={movies} title={"Top rated Movies"} />
-      <MovieList movies={movies} title={"Popular Movies"} />
-      <MovieList movies={movies} title={"Cult Classic"} />
+      <MovieList movies={top_rated} title={"Top rated Movies"} />
+      <MovieList movies={popularMovies} title={"Popular Movies"} />
+      <MovieList movies={upcoming} title={"Upcoming Movies"} />
       </div>
     </div>
   );
