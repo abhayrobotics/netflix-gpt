@@ -12,6 +12,7 @@
     - created account
     - created a constant TMDBoption  with user api token.
     - useEffect to fetch anasyncrounouse api call
+-   Open AI GPT
 
 ## Setup
 - npx create-react-app
@@ -64,6 +65,7 @@
 - tailwind classes to style
 - build "movie list container" ie movies slider
 - created a generic hook for adding all types data in slider useAddMoviescategoryI(url, Popular)
+- Open AI GPT
 
 
 
@@ -81,7 +83,7 @@
         - <VideoBackground />
         - <TitleContainer />
             - Title in description
-            - play controls
+            - play controls-                pending
     - <MovieListContainer />
         - movieslist - popular *n
             - MovieCard * n
