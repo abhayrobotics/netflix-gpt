@@ -72,7 +72,7 @@
 - GPTSearch
     - Search Bar
     - Movie Suggestions
-- languages multilingual
+- languages multilingual using langconstant 
 
 
 

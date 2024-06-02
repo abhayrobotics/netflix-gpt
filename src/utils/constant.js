@@ -26,3 +26,12 @@ export const TMDB_Options = {
     }
   };
   
+//language Constant
+
+export const SupportedLanguages =[
+  {identifier:"en", lang:"English"} ,
+  {identifier:"hindi", lang:"Hindi"} ,
+  {identifier:"spanish", lang:"Spanish"} ,
+
+
+]

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import userLogo from "../assets/user.png";
-import { NetflixLogo } from "../utils/constant";
+import { NetflixLogo, SupportedLanguages } from "../utils/constant";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
@@ -73,6 +73,13 @@ const Header = () => {
         {/* header icons show if user is not null */}
         {user && (
           <div className="flex">
+
+            {/* multi language */}
+            <select className=" text-sm h-fit p-1 my-auto mx-2 bg-black text-white">  
+              {SupportedLanguages?.map((item)=> <option className="" value={item.identifier}>{item.lang}</option> )}
+            </select>
+
+
             <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base text-white bg-green-700 rounded-lg">GPT Search </button>
             <div
               className="flex my-auto cursor-pointer "
