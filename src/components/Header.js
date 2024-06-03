@@ -15,6 +15,7 @@ const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const gptSearchView = useSelector((store)=> store.search.gptSearchView)
+  const lang = useSelector(store =>store.config.preferredLanguage)
  
 
   // handles signout
@@ -39,6 +40,8 @@ const Header = () => {
   const handleLanguageChange =(e)=>{
    
     dispatch(changeLanguage(e.target.value))
+   
+    // document.getElementById(lang).setAttribute("selected",true)
   } 
 
   // handles chnage in auth state
@@ -86,13 +89,14 @@ const Header = () => {
             
             {gptSearchView &&(
               <select className=" text-sm h-fit p-1 my-auto mx-2 bg-black text-white" onChange={handleLanguageChange}>  
-              {SupportedLanguages?.map((item)=> <option className="" value={item.identifier} key={item.identifier}>{item.lang}</option> )}
+              {SupportedLanguages?.map((item)=> <option id={item.identifier} value={item.identifier} key={item.identifier}>{item.lang}</option> )}
             </select>
             )
             }
 
 
-            <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base text-white bg-green-700 rounded-lg">GPT Search </button>
+            <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base text-white bg-green-700 rounded-lg">
+              {gptSearchView?"Browse Movies":"GPT Search"} </button>
             <div
               className="flex my-auto cursor-pointer "
               onClick={handleSignOut}

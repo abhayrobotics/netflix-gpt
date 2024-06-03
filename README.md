@@ -73,6 +73,13 @@
     - Search Bar
     - Movie Suggestions
 - languages multilingual using langconstant 
+- dropdown menu using select and option html tag
+- setting the value using a config slice and storing that vale of preferred language
+- only showing the language in search page
+- setup open ai
+    - create an account in platform.openai
+
+
 
 
 
@@ -99,6 +106,8 @@
     -   Search Bar
     -   Movie suggestion .
 
+## Bug
+-    after changing language , even though store value in chnaged but selection option is not selected
 ## Standard proprrties
 -   text x-margin- mx-8
 -   text y-margin- mx-4
