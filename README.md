@@ -78,6 +78,7 @@
 - only showing the language in search page
 - setup open ai
     - create an account in platform.openai
+    - npm install openai
 
 
 
