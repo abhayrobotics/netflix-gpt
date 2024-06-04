@@ -79,9 +79,7 @@
 - setup open ai
     - create an account in platform.openai
     - npm install openai
-
-
-
+    - openai setup 
 
 
 ## Features
