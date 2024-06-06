@@ -38,4 +38,5 @@ export const SupportedLanguages =[
 
 // open Ai constant
 
-const openAiKey = "sk-proj-j0vyab65nnZP9PYBD54kT3BlbkFJDk4uMLYam0zRly50rU8w"
+// export const openAiKey = "sk-proj-j0vyab65nnZP9PYBD54kT3BlbkFJDk4uMLYam0zRly50rU8w"
+export const openAiKey = "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"

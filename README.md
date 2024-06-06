@@ -80,6 +80,7 @@
     - create an account in platform.openai
     - npm install openai
     - openai setup 
+        create a
 
 
 ## Features
