@@ -9,12 +9,12 @@ import { lang } from "../utils/langConstant";
 import { useRef } from "react";
 
 import { model } from "../utils/geminiai";
-import { addQueryResult, addTmdbResult } from "../utils/queryResultSlice";
+import { addQueryResult, addTmdbResult, clearOldSearch } from "../utils/queryResultSlice";
 
 const SearchBar = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
-
+  
   // feteching the language from store
   const choosenLanguage = useSelector(
     (store) => store.config.preferredLanguage
@@ -26,9 +26,9 @@ const SearchBar = () => {
 
     // improving promt to get desired format output
     const prompt =
-      "Acting as Movie Recommentation system with a name of -AI, give me 5 results or exact result based on query: " +
+      "Acting as Movie Recommentation system with a name of -AI, give me 10 results or exact result based on query: " +
       searchText.current.value +
-      ". give the results in semicolon separated in one line, not semicolon after last movie name. Example results: sholay; udaan;loki;hungama;kites";
+      ". give the results in semicolon separated in one line, not semicolon after last movie name. Example results: sholay; udaan;loki;hungama;kites;apple;ball;bat;cat;Dog";
 
     // calling the Gemini ai model
     const result = await model.generateContent(prompt);
@@ -50,12 +50,9 @@ const SearchBar = () => {
           console.log(URL1);
           const searchResult = await fetch(URL1, TMDB_Options);
           const json = await searchResult.json();
-          // console.log(json)
           console.log(json.results[0]);
           dispatch(addTmdbResult(json.results[0]))
-          // json?.results?.map((item)=>{
-          //   console.log(item.name)
-          //   })
+      
         };
       handleSearch()
       });
