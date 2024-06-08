@@ -65,14 +65,14 @@ const SearchBar = () => {
   return (
     <div>
       {/* background Image */}
-      <div className="-z-10 absolute top-0">
+      <div className="-z-10 fixed top-0">
         <img
-          className="min-h-screen object-cover "
+          className="min-h-screen w-[100svw] object-cover "
           src={netflixbackground}
           alt="backgound"
         />
       </div>
-      <div className="bg-black mt-[10%]  w-1/2 mx-auto   ">
+      <div className="bg-black mt-[40%] sm:mt-[10%]  w-[95%] sm:w-1/2 mx-auto   ">
         <form className="flex p-2 " onSubmit={(e) => e.preventDefault()}>
           <input
             ref={searchText}

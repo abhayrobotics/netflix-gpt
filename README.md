@@ -15,7 +15,7 @@
 -   Gemini  AI 
 -   Multi language
 
-## Setup
+## Setup (WorkFlow)- Developer Guide
 - npx create-react-app
     - delete the icon, test.js file and app.css code
 

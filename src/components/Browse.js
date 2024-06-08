@@ -40,10 +40,10 @@ const Browse = () => {
       {gptSearchView ? (
         <GptSearch />
       ) : (
-        <>
+        <div className="">
           <MainContainer />
           <MovieListContainer />
-        </>
+        </div>
       )}
     </div>
   );

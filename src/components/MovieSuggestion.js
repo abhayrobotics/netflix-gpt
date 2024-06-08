@@ -12,9 +12,9 @@ const MovieSuggestion = () => {
   const tmdbresult =useSelector((store)=>store.query.TmdbResult)
   
       return (<>
-       <div className="w-11/12 h-[50vh] p-4 my-16 bg-black bg-opacity-85 mx-auto ">
+       <div className="w-[95%] sm:w-11/12 h-full sm:h-[50vh] p-1 sm:p-4 my-6 sm:my-16 bg-black bg-opacity-85 mx-auto ">
         {/* <ShimmerCard /> */}
-        <MovieList movies={tmdbresult} title={"Our Suggestions"} />
+        <MovieList movies={tmdbresult} title={"Recommended Movies"} />
        </div>
      
       </>

@@ -78,35 +78,35 @@ const Header = () => {
 
   return (
     <div className=" w-svw overflow-x-hidden">
-      <div className="  absolute w-screen z-20 py-1 px-16 text-6xl bg-gradient-to-b from-black  flex justify-between ">
-        <Link to="/"><img className="w-[184px]" src={NetflixLogo} alt="logo" /></Link>
+      <div className="  absolute w-screen z-20 py-1 px-16 text-6xl bg-gradient-to-b from-black  flex justify-between flex-col sm:flex-row ">
+        <Link to="/"><img className="w-[184px] mx-auto sm:mx-0" src={NetflixLogo} alt="logo" /></Link>
 
         {/* header icons show if user is not null */}
         {user && (
-          <div className="flex">
+          <div className="flex  justify-between  ">
             
             {/* show multi language only for gpt search page */}
             
             {gptSearchView &&(
-              <select className=" text-sm h-fit p-1 my-auto mx-2 bg-black text-white" onChange={handleLanguageChange}>  
+              <select className="  sm:text-sm h-fit p-1 my-auto mx-auto sm:mx-2 bg-black text-white " onChange={handleLanguageChange}>  
               {SupportedLanguages?.map((item)=> <option id={item.identifier} value={item.identifier} key={item.identifier}>{item.lang}</option> )}
             </select>
             )
             }
 
 
-            <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base font-semibold border border-1 text-white  rounded-lg">
-              {gptSearchView?"Browse Movies":"AI Search"} </button>
+            <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-sm sm:text-base font-semibold border border-1 text-white  rounded-lg">
+              {gptSearchView?"Home":"AI Search"} </button>
             <div
               className="flex my-auto cursor-pointer "
               onClick={handleSignOut}
             >
               <img
-                className="w-8 h-8 mx-2 rounded-sm"
+                className="w-8 h-8 mx-2 rounded-sm hidden sm:inline-block"
                 src={user.photoURL == null ? userLogo : user.photoURL}
                 alt="user icon"
               />
-              <div className="font-semibold text-lg text-white pr-8">Sign Out</div>
+              <div className="font-semibold my-auto text-sm sm:text-lg text-white pr-8">Sign Out</div>
             </div>
           </div>
         )}

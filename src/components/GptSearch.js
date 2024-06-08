@@ -7,7 +7,7 @@ const GptSearch = () => {
   const query = useSelector((store)=> store.query.queryResult);
   console.log(query)
   return (
-    <div>
+    <div className=" ">
         <SearchBar />
         {
         query.length==0? <></>:
