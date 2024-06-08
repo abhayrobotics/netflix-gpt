@@ -35,6 +35,3 @@ export const SupportedLanguages =[
 
 
 ]
-
-// open Ai constant
-
