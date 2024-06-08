@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { netflixbackground } from "../utils/constant";
 import { lang } from "../utils/langConstant";
 import { useRef } from "react";
-import  {openai}  from "../utils/openai";
+
 import { model } from "../utils/geminiai";
 
 const SearchBar = () => {
@@ -19,14 +19,9 @@ const SearchBar = () => {
     const prompt =
       "Acting as Movie Recommentation system, giveme 5 results based on query: " +
       searchText.current.value +
-      ". give the results in semicolon separated. Example results: sholay; udaan; loki; hungama; kites";
+      ". give the results in semicolon separated in one line. Example results: sholay; udaan; loki; hungama; kites";
     
-    //   const completion = await openai.chat.completions.create({
-    //     messages: [{ role: "system", content: GPTquery }],
-    //     model: "gpt-3.5-turbo",
-    //   });
-
-    //   console.log(completion.choices);
+   
 
     const result = await model.generateContent(prompt)
     const response = await result.response;
