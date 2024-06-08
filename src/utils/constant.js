@@ -15,6 +15,8 @@ export const top_rated_movies_URL ="https://api.themoviedb.org/3/movie/top_rated
 export const upcoming_movies_URL ="https://api.themoviedb.org/3/movie/upcoming?page=1";
 export const webShows_URL = "https://api.themoviedb.org/3/genre/tv/list"
 
+export const Search_URL = "https://api.themoviedb.org/3/search/movie?query="
+export const Search_URL_postfix ='&include_adult=false&language=en-US&page=1'; 
 
 // APi Contstant
 

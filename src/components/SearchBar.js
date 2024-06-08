@@ -1,12 +1,20 @@
-import { useSelector } from "react-redux";
-import { netflixbackground } from "../utils/constant";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  Search_URL,
+  Search_URL_postfix,
+  TMDB_Options,
+  netflixbackground,
+} from "../utils/constant";
 import { lang } from "../utils/langConstant";
 import { useRef } from "react";
 
 import { model } from "../utils/geminiai";
+import { addQueryResult, addTmdbResult } from "../utils/queryResultSlice";
 
 const SearchBar = () => {
   const searchText = useRef(null);
+  const dispatch = useDispatch();
+
   // feteching the language from store
   const choosenLanguage = useSelector(
     (store) => store.config.preferredLanguage
@@ -16,20 +24,47 @@ const SearchBar = () => {
   const handleSearchRequest = async () => {
     console.log(searchText.current.value);
 
+    // improving promt to get desired format output
     const prompt =
-      "Acting as Movie Recommentation system, giveme 5 results based on query: " +
+      "Acting as Movie Recommentation system with a name of -AI, give me 5 results or exact result based on query: " +
       searchText.current.value +
-      ". give the results in semicolon separated in one line. Example results: sholay; udaan; loki; hungama; kites";
-    
-   
+      ". give the results in semicolon separated in one line, not semicolon after last movie name. Example results: sholay; udaan;loki;hungama;kites";
 
-    const result = await model.generateContent(prompt)
+    // calling the Gemini ai model
+    const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
-    console.log(text);
+    try {
+      // console.log(text);
+      const movieArray = text.split("; ");
+      movieArray[4] = movieArray[4].split(" \n")[0];
+      console.log(movieArray);
 
-  
+      // dispatch an action using a reducer of query
+      dispatch(addQueryResult(movieArray));
+
+      movieArray?.map((movieSeaarchResult) => {
+        // searching item in tmdb
+        const handleSearch = async () => {
+          const URL1 = Search_URL + movieSeaarchResult + Search_URL_postfix;
+          console.log(URL1);
+          const searchResult = await fetch(URL1, TMDB_Options);
+          const json = await searchResult.json();
+          // console.log(json)
+          console.log(json.results[0]);
+          dispatch(addTmdbResult(json.results[0]))
+          // json?.results?.map((item)=>{
+          //   console.log(item.name)
+          //   })
+        };
+      handleSearch()
+      });
+
+    } catch (error) {
+      console.log(text);
+    }
   };
+
   return (
     <div>
       {/* background Image */}

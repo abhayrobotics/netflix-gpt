@@ -3,6 +3,7 @@ import userReducer from "./userSlice";
 import movieReducer from "./movieSlice"
 import searchSlice from "./searchSlice";
 import configSlice from "./configSlice";
+import queryResultSlice from "./queryResultSlice";
 
 const appStore =configureStore({
     reducer:{
@@ -10,6 +11,7 @@ const appStore =configureStore({
         movies:movieReducer,
         search:searchSlice,
         config: configSlice,
+        query: queryResultSlice,
 
     }
 })

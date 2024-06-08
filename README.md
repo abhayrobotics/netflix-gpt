@@ -81,8 +81,12 @@
     - npm install openai
     - openai setup 
         create a
--   Gemini API setup
-    -npm install @google/generative-ai
+- set up Gemini API (choosing this chat model  as Free)
+    - create an account
+    - npm install @google/generative-ai
+    - creating geminiai.js page and initialise the model as per documentation.
+    - hiding the api key in .env 
+    - setting promt static(for formating and only output movies) + dynamic(based on input)
 
 
 ## Features

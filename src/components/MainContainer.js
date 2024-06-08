@@ -6,7 +6,7 @@ const MainContainer = () => {
     // fetchin data from movieslice using useSelector
     const movies = useSelector((store) => store.movies.nowPlayingMovies);
     
-    // movies is null that is not loaded than early return
+    // movies is null that if is not loaded than early return
 
     if(movies==null) return;
     
