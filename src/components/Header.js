@@ -3,7 +3,7 @@ import userLogo from "../assets/user.png";
 import { NetflixLogo, SupportedLanguages } from "../utils/constant";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../utils/userSlice";
 
@@ -79,7 +79,7 @@ const Header = () => {
   return (
     <div className=" w-svw overflow-x-hidden">
       <div className="  absolute w-screen z-20 py-1 px-16 text-6xl bg-gradient-to-b from-black  flex justify-between ">
-        <img className="w-[184px]" src={NetflixLogo} alt="logo" />
+        <Link to="/"><img className="w-[184px]" src={NetflixLogo} alt="logo" /></Link>
 
         {/* header icons show if user is not null */}
         {user && (

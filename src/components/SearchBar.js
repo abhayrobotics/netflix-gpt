@@ -38,7 +38,7 @@ const SearchBar = () => {
       // console.log(text);
       const movieArray = text.split("; ");
       movieArray[4] = movieArray[4].split(" \n")[0];
-      console.log(movieArray);
+      // console.log(movieArray);
 
       // dispatch an action using a reducer of query
       dispatch(addQueryResult(movieArray));
@@ -47,10 +47,10 @@ const SearchBar = () => {
         // searching item in tmdb
         const handleSearch = async () => {
           const URL1 = Search_URL + movieSeaarchResult + Search_URL_postfix;
-          console.log(URL1);
+          // console.log(URL1);
           const searchResult = await fetch(URL1, TMDB_Options);
           const json = await searchResult.json();
-          console.log(json.results[0]);
+          // console.log(json.results[0]);
           dispatch(addTmdbResult(json.results[0]))
       
         };
