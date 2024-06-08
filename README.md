@@ -81,6 +81,8 @@
     - npm install openai
     - openai setup 
         create a
+-   Gemini API setup
+    -npm install @google/generative-ai
 
 
 ## Features

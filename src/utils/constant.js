@@ -22,7 +22,8 @@ export const TMDB_Options = {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMGNkYzQ4ZjdhMGUyMTE1NTBjYWY3NDNiNDBlODNmMyIsInN1YiI6IjYzZmI0YzQ3NzY0NmZkMDBhMjg0NWQxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.suTHSAY5AReFRe9PkOTKuBeyJZUSR-jME9YM6B2LLjM'
+      // Authorization: 'Bearer  eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJlMGNkYzQ4ZjdhMGUyMTE1NTBjYWY3NDNiNDBlODNmMyIsInN1YiI6IjYzZmI0YzQ3NzY0NmZkMDBhMjg0NWQxYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.suTHSAY5AReFRe9PkOTKuBeyJZUSR-jME9YM6B2LLjM'
+      Authorization: 'Bearer '+ process.env.REACT_APP_TMDB_API,
     }
   };
   
@@ -39,4 +40,5 @@ export const SupportedLanguages =[
 // open Ai constant
 
 // export const openAiKey = "sk-proj-j0vyab65nnZP9PYBD54kT3BlbkFJDk4uMLYam0zRly50rU8w"
-export const openAiKey = "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"
+export const openAiKey = process.env.REACT_APP_Open_AI
+
