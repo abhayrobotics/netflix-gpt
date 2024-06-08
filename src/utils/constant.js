@@ -38,5 +38,3 @@ export const SupportedLanguages =[
 
 // open Ai constant
 
-export const openAiKey = process.env.REACT_APP_Open_AI
-
