@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../utils/movieSlice";
 import { Popular_movies, TMDB_Options } from "../utils/constant";
 import { useEffect } from "react";
@@ -7,10 +7,14 @@ import { useEffect } from "react";
 const useNowPlayingMovies =()=>{
 
     
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
+    const nowPlayingMovies= useSelector(store=> store.movies.nowPlayingMovies);
+  
     
     useEffect(()=>{
-        getNowplayingMovies();
+        if(!nowPlayingMovies){
+            getNowplayingMovies();
+        }
     },[])
 
     const getNowplayingMovies = async ()=>{

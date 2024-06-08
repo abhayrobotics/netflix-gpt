@@ -95,8 +95,8 @@ const Header = () => {
             }
 
 
-            <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base text-white bg-green-700 rounded-lg">
-              {gptSearchView?"Browse Movies":"GPT Search"} </button>
+            <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mr-6 text-base font-semibold border border-1 text-white  rounded-lg">
+              {gptSearchView?"Browse Movies":"AI Search"} </button>
             <div
               className="flex my-auto cursor-pointer "
               onClick={handleSignOut}
@@ -106,7 +106,7 @@ const Header = () => {
                 src={user.photoURL == null ? userLogo : user.photoURL}
                 alt="user icon"
               />
-              <div className="font-bold text-lg text-white pr-8">Sign Out</div>
+              <div className="font-semibold text-lg text-white pr-8">Sign Out</div>
             </div>
           </div>
         )}

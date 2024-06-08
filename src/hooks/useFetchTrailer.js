@@ -1,5 +1,5 @@
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTrailer } from "../utils/movieSlice";
 import { useEffect } from "react";
 import { TMDB_Options } from "../utils/constant";
@@ -8,9 +8,13 @@ import { TMDB_Options } from "../utils/constant";
 
 const useFetchTrailer = (id) => {
     const dispatch =useDispatch();
+    const trailerVideo = useSelector(store=> store.movies.trailerVideo)
 
     useEffect(()=>{
-        getTrailer();
+        if(!trailerVideo){
+
+            getTrailer();
+        } 
     },[])
 
     const getTrailer = async ()=>{

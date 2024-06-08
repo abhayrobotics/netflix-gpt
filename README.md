@@ -12,7 +12,7 @@
     - created account
     - created a constant TMDBoption  with user api token.
     - useEffect to fetch anasyncrounouse api call
--   Open AI GPT
+-   Gemini  AI 
 -   Multi language
 
 ## Setup
@@ -87,6 +87,13 @@
     - creating geminiai.js page and initialise the model as per documentation.
     - hiding the api key in .env 
     - setting promt static(for formating and only output movies) + dynamic(based on input)
+    - create a new queryResult Slicein store and add the result in store in an array using split
+- set moviesugggestion component
+    - get the query slice data from store by subscribing to store using useSelector
+    - for each result , use search movie tmdb api call and set the result in queryTmdbresult Slice
+    - using Movie List component render.
+- Memoization: reduceing the api by first checking if the data is present in the store.
+
 
 
 ## Features

@@ -2,13 +2,17 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { TMDB_Options } from "../utils/constant";
 
-const useAddMovies =(Url,addMoviesCategory)=>{
-
+const useAddMovies =(variable,Url,addMoviesCategory)=>{
+    
     
     const dispatch = useDispatch()
     
     useEffect(()=>{
-        getMovies();
+        // only calling the api if not loaded already
+        if(!variable){
+
+            getMovies();
+        }
     },[])
 
     const getMovies = async ()=>{
