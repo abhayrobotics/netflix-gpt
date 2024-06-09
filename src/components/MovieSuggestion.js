@@ -1,9 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Search_URL, Search_URL_postfix, TMDB_Options } from "../utils/constant";
 import MovieList from "./MovieList";
-import { addTmdbResult } from "../utils/queryResultSlice";
-import MovieCard from "./MovieCard";
-import ShimmerCard from "./ShimmerCard";
+
 
 const MovieSuggestion = () => {
 

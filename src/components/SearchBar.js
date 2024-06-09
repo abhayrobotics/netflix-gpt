@@ -9,7 +9,7 @@ import { lang } from "../utils/langConstant";
 import { useRef } from "react";
 
 import { model } from "../utils/geminiai";
-import { addQueryResult, addTmdbResult, clearOldSearch } from "../utils/queryResultSlice";
+import { addQueryResult, addTmdbResult } from "../utils/queryResultSlice";
 
 const SearchBar = () => {
   const searchText = useRef(null);
@@ -72,11 +72,11 @@ const SearchBar = () => {
           alt="backgound"
         />
       </div>
-      <div className="bg-black mt-[40%] sm:mt-[10%]  w-[95%] sm:w-1/2 mx-auto   ">
+      <div className="bg-black mt-[40%] sm:mt-[10%]  w-[95%] sm:w-2/3 mx-auto   rounded-md ">
         <form className="flex p-2 " onSubmit={(e) => e.preventDefault()}>
           <input
             ref={searchText}
-            className="w-[80%] border-white  px-2 py-1 my-2  mx-2"
+            className="w-[80%] border-white  px-2 py-1 my-2  mx-2 rounded-sm"
             type="text"
             placeholder={lang[choosenLanguage].searchPlaceholder}
           />

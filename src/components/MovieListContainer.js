@@ -15,7 +15,7 @@ const MovieListContainer = () => {
 
   return (
     <div className="  bg-black">
-      <div className="  pt-12 sm:pt-0  mt-0 sm:-mt-72 relative z-10">
+      <div className="  pt-12 sm:pt-72 2xl:pt-0  mt-0 sm:-mt-72 relative z-10">
 
       <MovieList className="" movies={movies} title={"Now Playing Movies"} />
       <MovieList movies={top_rated} title={"Top rated Movies"} />

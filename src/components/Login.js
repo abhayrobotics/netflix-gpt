@@ -123,7 +123,7 @@ const Login = () => {
       {/* Login form */}
       <form
         onSubmit={(e) => e.preventDefault()}
-        className=" absolute top-28  left-1/2   -translate-x-[50%]  p-16  w-3/12 min-w-96 rounded-lg text-white z-10 bg-black  bg-opacity-80 "
+        className=" absolute top-1/2  -translate-y-[50%]  left-1/2   -translate-x-[50%]  p-16  w-[95%] md:w-3/12 min-w-96 rounded-lg text-white z-10 bg-black  bg-opacity-80 "
       >
         <h2 className="mb-6 text-3xl font-bold">
           {signup === true ? "Sign Up" : "Sign In"}
