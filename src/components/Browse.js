@@ -25,6 +25,7 @@ import {
   API_trailer,
 } from "../utils/ApiCallData";
 import { useEffect } from "react";
+import MovieDetail from "./MovieDetail";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.search.gptSearchView);
@@ -78,6 +79,7 @@ const Browse = () => {
   return (
     <div className=" overflow-x-hidden">
       <Header />
+      
 
       {gptSearchView ? (
         <GptSearch />
@@ -87,6 +89,7 @@ const Browse = () => {
           <MovieListContainer />
         </div>
       )}
+      <MovieDetail/>
     </div>
   );
 };
