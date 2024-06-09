@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { TMDB_Options } from "../utils/constant";
+import Error from "../components/Error";
 
 const useAddMovies = (harcodedData,variable, Url, addMoviesCategory) => {
   const dispatch = useDispatch();
@@ -9,7 +10,7 @@ const useAddMovies = (harcodedData,variable, Url, addMoviesCategory) => {
   useEffect(() => {
     // only calling the api if not loaded already
    
-      getMovies();
+      !variable && getMovies();
    
   }, []);
 
@@ -24,7 +25,8 @@ const useAddMovies = (harcodedData,variable, Url, addMoviesCategory) => {
     } 
     // if APi fetching fails call the hard coded data
     catch (error) {
-      console.log(error);
+      <Error />
+      // console.log(error);
       dispatch(addMoviesCategory(harcodedData));
     }
   };

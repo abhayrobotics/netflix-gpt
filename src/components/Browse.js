@@ -45,7 +45,7 @@ const Browse = () => {
     dispatchhardCodedData();
   }, []);
 
-  // getting the value from store id present
+  // getting the value from store id present for memoization 
   const popular_movies = useSelector((store) => store.movies.popular_movies);
   const top_rated_movies = useSelector(
     (store) => store.movies.top_rated_movies

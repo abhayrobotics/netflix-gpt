@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addNowPlayingMovies } from "../utils/movieSlice";
-import { Popular_movies, TMDB_Options } from "../utils/constant";
+import {  TMDB_Options } from "../utils/constant";
 import { useEffect } from "react";
 import { API_now_playing_movies } from "../utils/ApiCallData";
 
@@ -13,7 +13,7 @@ const useNowPlayingMovies = () => {
   useEffect(() => {
     
    
-      getNowplayingMovies();
+     !nowPlayingMovies && getNowplayingMovies();
     
   }, []);
 

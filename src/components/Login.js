@@ -12,6 +12,9 @@ import { ValidateForm } from "../utils/ValidateForm";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { netflixbackground, userAvatar } from "../utils/constant";
+import Information from "./Information";
+import Error from "./Error";
+
 
 const Login = () => {
   const [signup, setSignUp] = useState(false);
@@ -182,7 +185,10 @@ const Login = () => {
             </span>
           </div>
         )}
+        {/* <Information /> */}
       </form>
+      
+        {/* <Error /> */}
     </div>
   );
 };
