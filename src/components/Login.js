@@ -58,7 +58,7 @@ const Login = () => {
       )
         .then((userCredential) => {
           const user = userCredential.user;
-          console.log(user);
+          // console.log(user);
           // console.log("sign up success")
 
           // ! update user data
@@ -95,7 +95,7 @@ const Login = () => {
         .then((userCredential) => {
           // Signed in
           const user = userCredential.user;
-          console.log(user);
+          // console.log(user);
           // console.log("sign in success");
 
         })

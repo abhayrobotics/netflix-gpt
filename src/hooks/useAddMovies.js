@@ -2,28 +2,31 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { TMDB_Options } from "../utils/constant";
 
-const useAddMovies =(variable,Url,addMoviesCategory)=>{
-    
-    
-    const dispatch = useDispatch()
-    
-    useEffect(()=>{
-        // only calling the api if not loaded already
-        if(!variable){
+const useAddMovies = (harcodedData,variable, Url, addMoviesCategory) => {
+  const dispatch = useDispatch();
+ 
 
-            getMovies();
-        }
-    },[])
+  useEffect(() => {
+    // only calling the api if not loaded already
+    if (!variable) {
+      getMovies();
+    }
+  }, []);
 
-    const getMovies = async ()=>{
-        const data = await fetch(Url, TMDB_Options)
-        const json = await data.json();
+  const getMovies = async () => {
+    try {
+      const data = await fetch(Url, TMDB_Options);
+      const json = await data.json();
 
-        // console.log(json.results)
-        dispatch(addMoviesCategory(json.results))
-        
-    };
-}
+      
+      dispatch(addMoviesCategory(json.results));
+    } 
+    // if APi fetching fails call the hard coded data
+    catch (error) {
+      console.log(error);
+      dispatch(addMoviesCategory(harcodedData));
+    }
+  };
+};
 
 export default useAddMovies;
-

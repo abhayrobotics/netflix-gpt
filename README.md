@@ -93,6 +93,9 @@
     - for each result , use search movie tmdb api call and set the result in queryTmdbresult Slice
     - using Movie List component render.
 - Memoization: reduceing the api by first checking if the data is present in the store.
+- Responsive
+- (optional)
+    if TMDB fails add the hard coded data.
 
 
 
