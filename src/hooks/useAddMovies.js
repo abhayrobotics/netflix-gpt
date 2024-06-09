@@ -8,13 +8,14 @@ const useAddMovies = (harcodedData,variable, Url, addMoviesCategory) => {
 
   useEffect(() => {
     // only calling the api if not loaded already
-    if (!variable) {
+   
       getMovies();
-    }
+   
   }, []);
 
   const getMovies = async () => {
     try {
+      
       const data = await fetch(Url, TMDB_Options);
       const json = await data.json();
 

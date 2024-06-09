@@ -8,6 +8,8 @@ const useFetchTrailer = (id) => {
   const dispatch = useDispatch();
   const trailerVideo = useSelector((store) => store.movies.trailerVideo);
 
+
+
   useEffect(() => {
     if (!trailerVideo) {
       getTrailer();
@@ -19,11 +21,10 @@ const useFetchTrailer = (id) => {
         
       const data = await fetch(
         "https://api.themoviedb.org/3/movie/" + id + "/videos?language=en-US",
-        TMDB_Options,{
-            timeout:5000
-        }
+        TMDB_Options
       );
       const json = await data.json();
+      
     //   console.log(json?.results);
 
       const filterVideos = json?.results?.filter(
@@ -31,7 +32,8 @@ const useFetchTrailer = (id) => {
       );
       // if zero trailer found show 1st video,else show 1st trailer
       const trailer = filterVideos == null ? json?.results[0] : filterVideos[0];
-     
+      // console.log(trailer)
+      // console.log(API_trailer[0])
       dispatch(addTrailer(trailer));
     } 
     catch (error) {

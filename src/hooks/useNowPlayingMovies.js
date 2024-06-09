@@ -11,9 +11,10 @@ const useNowPlayingMovies = () => {
   );
 
   useEffect(() => {
-    if (!nowPlayingMovies) {
+    
+   
       getNowplayingMovies();
-    }
+    
   }, []);
 
   const getNowplayingMovies = async () => {
@@ -35,5 +36,7 @@ const useNowPlayingMovies = () => {
     }
   };
 };
+
+
 
 export default useNowPlayingMovies;

@@ -3,7 +3,7 @@ const ShimmerCard = () => {
     for (let i = 0; i < 10; i++) {
       array.push(
         <div
-          className=" flex  flex-col animate-pulse   m-3 pointer border  rounded-xl border-slate-300  min-w-[144px] min-h-[216px]  my-4  rounded-xl shadow-lg bg-slate-100  "
+          className=" flex  flex-col animate-pulse   m-3 pointer border  rounded-xl border-slate-300  min-w-[144px] min-h-[216px]  my-4  shadow-lg bg-slate-100  "
           key={i}
         >
           {/* img */}
