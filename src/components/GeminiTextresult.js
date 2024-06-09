@@ -3,6 +3,11 @@ import { useSelector } from "react-redux";
 const GeminiTextresult = () => {
   const textResult = useSelector((store) => store.query.queryResult);
   console.log(textResult);
+
+  
+
+
+
   return (
     <div>
       <h2 className="text-white text-2xl">Recommended Movies :</h2>

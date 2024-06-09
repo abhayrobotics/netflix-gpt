@@ -5,7 +5,7 @@ import SearchBar from "./SearchBar"
 
 const GptSearch = () => {
   const query = useSelector((store)=> store.query.queryResult);
-  console.log(query)
+  // console.log(query)
   return (
     <div className=" ">
         <SearchBar />

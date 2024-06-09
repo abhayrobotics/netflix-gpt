@@ -38,7 +38,7 @@ const SearchBar = () => {
     const response = await result.response;
     const text = response.text();
     try {
-      // console.log(text);
+      console.log(text);
       const movieArray = text.split("; ");
       movieArray[4] = movieArray[4].split(" \n")[0];
       // console.log(movieArray);
