@@ -95,7 +95,9 @@
 - Memoization: reduceing the api by first checking if the data is present in the store.
 - Responsive
 - (optional)
-    if TMDB fails add the hard coded data.
+    - if TMDB fails add the hard coded data.
+    - loads the data first from hardcoded data , then check  api for any new change
+    - 
 
 
 
@@ -116,14 +118,19 @@
     - <MovieListContainer />
         - movieslist - popular *n
             - MovieCard * n
+                - MovieDetail
         - 
 
 -   Netlfix Gpt
     -   Search Bar
     -   Movie suggestion .
+    
 
 ## Bug
 -    after changing language , even though store value in chnaged but selection option is not selected
+-    Movie detail , when tmdb not working not made
+-   Error checking
+
 ## Standard proprrties
 -   text x-margin- mx-8
 -   text y-margin- mx-4
@@ -134,4 +141,4 @@
 ## pending features
 -   icons
 -   video controls- mute
--   
+-   video trailer for eah movie shown 
