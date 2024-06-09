@@ -114,7 +114,7 @@ const Login = () => {
       {/* background Image */}
       <div>
         <img
-          className="min-h-screen object-cover "
+          className="h-screen w-screen object-cover "
           src={netflixbackground}
           alt="backgound"
         />

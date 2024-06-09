@@ -9,6 +9,7 @@ import { addUser, removeUser } from "../utils/userSlice";
 
 import { toggleGptSearch } from "../utils/searchSlice";
 import { changeLanguage } from "../utils/configSlice";
+import Information from "./Information";
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -22,12 +23,12 @@ const Header = () => {
   const handleSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("sign out success");
+        // console.log("sign out success");
         navigate("/");
       })
       .catch((error) => {
         // An error happened.
-        console.log(error);
+        // console.log(error);
       });
   };
 
@@ -78,6 +79,7 @@ const Header = () => {
 
   return (
     <div className=" w-svw overflow-x-hidden">
+      {!user && <Information />}
       <div className="  absolute w-screen z-20 py-1 px-16 text-6xl bg-gradient-to-b from-black  flex justify-between flex-col sm:flex-row">
         <Link to="/"><img className="w-[184px] mx-auto sm:mx-0" src={NetflixLogo} alt="logo" /></Link>
 

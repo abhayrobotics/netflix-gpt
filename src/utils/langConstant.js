@@ -7,10 +7,10 @@ export const lang = {
     },
     hindi:{
         search:"खोज",
-        searchPlaceholder:"आज आप क्या देखना चाहते हैं?",
+        searchPlaceholder:"आज आप क्या देखना चाहते हैं? (कॉमेडी फिल्मे ...)",
     },
     spanish:{
         search: "buscar",
-        searchPlaceholder:"¿Qué quieres ver hoy?",
+        searchPlaceholder:"¿Qué quieres ver hoy? (como películas de comedia...)",
     }
 }

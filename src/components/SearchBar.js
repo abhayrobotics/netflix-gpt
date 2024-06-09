@@ -22,7 +22,7 @@ const SearchBar = () => {
 
   // search button function
   const handleSearchRequest = async () => {
-    console.log(searchText.current.value);
+    // console.log(searchText.current.value);
 
     // improving promt to get desired format output
     const prompt =
