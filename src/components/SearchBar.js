@@ -11,10 +11,13 @@ import { useRef } from "react";
 import { model } from "../utils/geminiai";
 import { addQueryResult, addTmdbResult } from "../utils/queryResultSlice";
 
+
 const SearchBar = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
-  
+
+  const top_rated = useSelector((store) =>store.movies.top_rated_movies)
+
   // feteching the language from store
   const choosenLanguage = useSelector(
     (store) => store.config.preferredLanguage
@@ -47,18 +50,22 @@ const SearchBar = () => {
         // searching item in tmdb
         const handleSearch = async () => {
           const URL1 = Search_URL + movieSeaarchResult + Search_URL_postfix;
-          // console.log(URL1);
-          const searchResult = await fetch(URL1, TMDB_Options);
-          const json = await searchResult.json();
-          // console.log(json.results[0]);
-          dispatch(addTmdbResult(json.results[0]))
-      
-        };
-      handleSearch()
-      });
 
+          try {
+            const searchResult = await fetch(URL1, TMDB_Options);
+            const json = await searchResult.json();
+            // console.log(json.results[0]);
+            dispatch(addTmdbResult(json.results[0]));
+          } catch (e) {
+            // console.log(e);
+            // dispatch(addTmdbResult(false))
+            
+          }
+        };
+        handleSearch();
+      });
     } catch (error) {
-      console.log(text);
+      // console.log(text);
     }
   };
 

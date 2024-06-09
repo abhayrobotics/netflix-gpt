@@ -37,6 +37,7 @@ const useFetchTrailer = (id) => {
       dispatch(addTrailer(trailer));
     } 
     catch (error) {
+      
         dispatch(addTrailer(API_trailer))
     }
   };
