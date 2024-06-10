@@ -145,7 +145,7 @@ const Login = () => {
           ref={email}
           className="w-full my-2 py-2 px-4 rounded-md  bg-slate-900  text-wite border border-slate-600 font-light"
           type="text"
-          placeholder="Email or mobile number"
+          placeholder="Email Id"
         />
 
         <input
