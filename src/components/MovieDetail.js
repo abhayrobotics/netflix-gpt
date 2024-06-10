@@ -14,7 +14,7 @@ const MovieDetail = () => {
   return (
     close && movie_Details && <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 z-40 ">
    
-      <div className="fixed  top-1/2 left-1/2 -translate-y-[50%] -translate-x-[50%] max-w-[70%] h-fit overflow-hidden object-fill m-auto z-50 rounded-xl ">
+      <div className="fixed  top-1/2 left-1/2 -translate-y-[50%] -translate-x-[50%] w-[85%] sm:max-w-[70%] h-fit overflow-hidden object-fill m-auto z-50 rounded-xl ">
         <div className="relative">
           <div className="absolute w-6 top-2  cursor-pointer bg-white p-1.5 rounded-xl right-2 hover:bg-red-600" onClick={closeButton}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
