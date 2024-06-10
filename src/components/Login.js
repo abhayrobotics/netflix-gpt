@@ -14,6 +14,7 @@ import { useDispatch } from "react-redux";
 import { netflixbackground, userAvatar } from "../utils/constant";
 import Information from "./Information";
 import Error from "./Error";
+import Footer from "./Footer";
 
 
 const Login = () => {
@@ -111,7 +112,7 @@ const Login = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative w-svw overflow-x-hidden ">
       <Header />
 
       {/* background Image */}
@@ -189,6 +190,7 @@ const Login = () => {
       </form>
       
         {/* <Error /> */}
+        <Footer />
     </div>
   );
 };

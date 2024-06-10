@@ -102,7 +102,9 @@ Live Link : https://netflix-gpt-d69df.firebaseapp.com/
 - (optional)
     - if TMDB fails add the hard coded data.
     - loads the data first from hardcoded data , then check  api for any new change
-    - 
+    - created a movieDetail card that show the detail of a movie when clicked ,
+       - hardcoded data for browse page
+       - live data for search movie
 
 
 
@@ -132,9 +134,11 @@ Live Link : https://netflix-gpt-d69df.firebaseapp.com/
     
 
 ## Bug
--    after changing language , even though store value in chnaged but selection option is not selected
--    Movie detail , when tmdb not working not made
--   Error checking
+-    after changing language , even though store value in chnaged but selection option is not selected-❌
+-    Movie detail , when tmdb not working not made-☑️
+-   Error checking-partial done✔️
+-   refresh firebase hosting error -☑️ using rewrite{}
+-   overflow-xscroll ❌
 
 ## Standard proprrties
 -   text x-margin- mx-8

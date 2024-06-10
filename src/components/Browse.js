@@ -26,6 +26,7 @@ import {
 } from "../utils/ApiCallData";
 import { useEffect } from "react";
 import MovieDetail from "./MovieDetail";
+import Footer from "./Footer";
 
 const Browse = () => {
   const gptSearchView = useSelector((store) => store.search.gptSearchView);
@@ -90,6 +91,7 @@ const Browse = () => {
         </div>
       )}
       <MovieDetail/>
+      <Footer />
     </div>
   );
 };
