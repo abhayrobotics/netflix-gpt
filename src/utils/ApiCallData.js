@@ -1368,9 +1368,8 @@ export const API_now_playing_movies = [
     vote_count: 977,
   },
 ];
+export const Total_Movie_list = [...API_popular_movies,...API_top_rated_movies, ...API_upcoming_movies,...API_now_playing_movies]
 
- const Total_List = [...API_popular_movies,...API_top_rated_movies, ...API_upcoming_movies,...API_now_playing_movies]
-export const Total_Movie_list =[new Set(Total_List)]
 
 export const API_trailer = {
   iso_639_1: "en",

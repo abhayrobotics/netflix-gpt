@@ -1,4 +1,9 @@
 # Netflix GPT
+Live Link : https://netflix-gpt-d69df.firebaseapp.com/
+
+[FOR BEST RESULT USE VPN]
+
+![plot](./screenshot.png)
 
 ## Stack used
 -   React

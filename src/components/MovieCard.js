@@ -8,26 +8,40 @@ import { Total_Movie_list } from "../utils/ApiCallData";
 const MovieCard = ({ movieItem }) => {
   const dispatch = useDispatch();
 
+  // get the movie id on the movie clicked  using the click handler
   const handleMovieDetail = (e) => {
-    // console.log(e.target.id)
+    
     dispatch(toogleBtn(true));
-    const movieID =e.target.id
-    movieDetails(e.target.id);
+    const movieID = e.target.id;
+    // console.log(movieID)
+    movieDetails(movieID);
   };
 
+
+  // searchmovie information using the id passed
   const movieDetails = async (ID) => {
     const url = MovieById + ID;
-    // console.log(url);
-
+    //  try hardcoded data
     try {
-      const data = await fetch(url, TMDB_Options);
-      const json = await data.json();
-      dispatch(addMovieDetails(json));
-      console.log(json);
-    } catch (e) {
-      console.log(Total_Movie_list)
-      
+      const filteredList = Total_Movie_list.filter((item) => {
+        if (item.id == ID) {
+          return item;
+        }
+      });
+      dispatch(addMovieDetails(filteredList[0]));
     }
+     catch (e) {
+     }
+      // try live data
+      try {
+        const data = await fetch(url, TMDB_Options);
+        const json = await data.json();
+        dispatch(addMovieDetails(json));
+        console.log(json);
+      } catch (e) {
+       console.log(e)
+      }
+    
   };
 
   return (

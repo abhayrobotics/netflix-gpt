@@ -12,7 +12,7 @@ const MovieDetail = () => {
     dispatch(toogleBtn(false))
   }
   return (
-    close && <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 z-40 ">
+    close && movie_Details && <div className="fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-80 z-40 ">
    
       <div className="fixed  top-1/2 left-1/2 -translate-y-[50%] -translate-x-[50%] max-w-[70%] h-fit overflow-hidden object-fill m-auto z-50 rounded-xl ">
         <div className="relative">
