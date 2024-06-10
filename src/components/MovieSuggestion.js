@@ -13,9 +13,9 @@ const MovieSuggestion = () => {
       return (<>
        <div className="w-[80%] sm:w-11/12 h-full sm:h-[50vh] p-1 sm:p-4 my-6 sm:my-16 bg-black bg-opacity-85 mx-auto ">
         {/* <ShimmerCard /> */}
-        {tmdbresult.length ==0?
-        <GeminiTextresult />
-        :<MovieList movies={tmdbresult} title={"Recommended Movies"} />
+        {tmdbresult.length !==0?
+        <MovieList movies={tmdbresult} title={"Recommended Movies"} />
+        :<GeminiTextresult />
         }
        </div>
      

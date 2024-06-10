@@ -1,7 +1,7 @@
 const Footer = () => {
   return (
     <div className="">
-      <div className="  w-[100vw]  bg-slate-600 flex py-1  px-10 justify-center ">
+      <div className=" absolute bottom-0 w-[100vw]  bg-slate-600 flex py-1  px-10 justify-center ">
         <h2 className="text-md font-semibold">
           Abhay kumar © 2024
         </h2>
