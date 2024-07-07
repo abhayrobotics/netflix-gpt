@@ -34,18 +34,18 @@ const Browse = () => {
   // console.log(gptSearchView);
 
 
-// as TMDB not working withoust VPN , for that hardcoded data
-  const dispatchhardCodedData = () => {
-    dispatch(addNowPlayingMovies(API_now_playing_movies));
-    dispatch(addTop_rated_movies(API_top_rated_movies));
-    dispatch(addUpcomingMovies(API_upcoming_movies));
-    dispatch(addPopularMovies(API_popular_movies));
-    dispatch(addTrailer(API_trailer));
-  };
-
+  
+  // as TMDB not working withoust VPN , for that hardcoded data
+    const dispatchhardCodedData = () => {
+      dispatch(addNowPlayingMovies(API_now_playing_movies));
+      dispatch(addTop_rated_movies(API_top_rated_movies));
+      dispatch(addUpcomingMovies(API_upcoming_movies));
+      dispatch(addPopularMovies(API_popular_movies));
+      dispatch(addTrailer(API_trailer));
+    };
   useEffect(() => {
     dispatchhardCodedData();
-  }, []);
+  }, [dispatchhardCodedData]);
 
   // getting the value from store id present for memoization 
   const popular_movies = useSelector((store) => store.movies.popular_movies);
