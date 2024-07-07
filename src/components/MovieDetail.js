@@ -1,5 +1,5 @@
 import React from "react";
-import { PosterFull_URL, Poster_URL } from "../utils/constant";
+import { PosterFull_URL } from "../utils/constant";
 import { useDispatch, useSelector } from "react-redux";
 import { toogleBtn } from "../utils/configSlice";
 

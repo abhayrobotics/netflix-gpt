@@ -13,7 +13,7 @@ const queryResultSlice = createSlice({
     addTmdbResult: (state, action) => {
     
         // for clearing old result
-      if (state.TmdbResult.length == 10) {
+      if (state.TmdbResult.length === 10) {
         state.TmdbResult.length = 0;
       }
 

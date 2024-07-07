@@ -10,7 +10,7 @@ const GptSearch = () => {
     <div className=" ">
         <SearchBar />
         {
-        query.length==0? <></>:
+        query.length===0? <></>:
         <MovieSuggestion />
         }
     </div>

@@ -16,7 +16,7 @@ const Header = () => {
   const navigate = useNavigate();
   const user = useSelector((store) => store.user);
   const gptSearchView = useSelector((store)=> store.search.gptSearchView)
-  const lang = useSelector(store =>store.config.preferredLanguage)
+  // const lang = useSelector(store =>store.config.preferredLanguage)
  
 
   // handles signout
@@ -73,7 +73,7 @@ const Header = () => {
 
     // unsubscribe when the component unmounts
     return () => unSubscribe();
-  }, []);
+  }, [dispatch,navigate]);
 
 
 

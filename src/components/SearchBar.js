@@ -16,7 +16,7 @@ const SearchBar = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
 
-  const top_rated = useSelector((store) =>store.movies.top_rated_movies)
+  // const top_rated = useSelector((store) =>store.movies.top_rated_movies)
 
   // feteching the language from store
   const choosenLanguage = useSelector(

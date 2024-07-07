@@ -23,10 +23,11 @@ const MovieCard = ({ movieItem }) => {
     const url = MovieById + ID;
     //  try hardcoded data
     try {
-      const filteredList = Total_Movie_list.filter((item) => {
-        if (item.id == ID) {
+      const filteredList = Total_Movie_list?.filter((item) => {
+        if (item.id === ID) {
           return item;
         }
+        return ;
       });
       dispatch(addMovieDetails(filteredList[0]));
     }
