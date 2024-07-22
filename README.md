@@ -1,5 +1,5 @@
 # Netflix GPT
-Live Link : https://netflix-gpt-d69df.firebaseapp.com/
+Live Link :https://netflix-abhay.netlify.app/
 
 [FOR BEST RESULT USE VPN]
 
@@ -139,6 +139,20 @@ Live Link : https://netflix-gpt-d69df.firebaseapp.com/
 -   Error checking-partial done✔️
 -   refresh firebase hosting error -☑️ using rewrite{}
 -   overflow-xscroll ❌
+-   Deployment in netifly:
+    Runtime 
+        Not set
+    Base directory 
+        /
+    Package directory
+        /build
+    Build command
+        CI= npm run build
+    Publish directory
+        /build
+    Functions directory
+        /netlify/functions
+    
 
 ## Standard proprrties
 -   text x-margin- mx-8

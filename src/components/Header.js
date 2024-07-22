@@ -81,11 +81,11 @@ const Header = () => {
     <div className=" w-svw overflow-x-hidden">
       {!user && <Information />}
       <div className="  absolute w-screen z-20 py-1 px-16 text-6xl bg-gradient-to-b from-black  flex justify-between flex-col sm:flex-row">
-        <Link to="/"><img className="w-[184px] mx-auto sm:mx-0" src={NetflixLogo} alt="logo" /></Link>
+        <Link to="/"><img className="w-[132px] sm:w-[184px] mb-4 sm:mb-0  mx-auto sm:mx-0" src={NetflixLogo} alt="logo" /></Link>
 
         {/* header icons show if user is not null */}
         {user && (
-          <div className="flex [align-items:center] justify-between sm:justify-end w-[90vw] ">
+          <div className="flex [align-items:center] justify-between sm:justify-end sm:w-[90vw] w-[80vw] ">
             
             {/* show multi language only for gpt search page */}
             
@@ -100,15 +100,15 @@ const Header = () => {
             <button  onClick={handleSearch} className="cursor-pointer px-6 py-1 my-auto mx-4 text-sm sm:text-base font-semibold border border-1 text-white bg-black bg-opacity-70 hover:bg-white hover:text-black rounded-lg">
               {gptSearchView?"Home":"AI Search"} </button>
             <div
-              className="flex my-auto cursor-pointer text-center  px-6 py-1 sm:p-0 border sm:border-0 rounded-lg"
+              className="flex my-auto cursor-pointer text-center  px-4 sm:px-6 py-1 sm:p-0  rounded-lg"
               onClick={handleSignOut}
             >
               <img
-                className="w-8 h-8 mx-2 rounded-sm hidden sm:inline-block"
+                className="w-8 h-8 mx-2 rounded-sm hidden sm:inline-block border-red-400 border-2"
                 src={user.photoURL == null ? userLogo : user.photoURL}
                 alt="user icon"
               />
-              <div className="font-semibold my-auto text-sm sm:text-lg text-white pr-8">Sign Out</div>
+              <div className="cursor-pointer px-6 py-1 my-auto mx-4 text-sm sm:text-base font-semibold border border-1 text-white bg-black bg-opacity-70 hover:bg-white hover:text-black rounded-lg">Sign Out</div>
             </div>
           </div>
         )}
