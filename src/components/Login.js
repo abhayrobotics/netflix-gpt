@@ -21,13 +21,13 @@ const Login = () => {
   const [signup, setSignUp] = useState(false);
   const [errorMessage, setErrorMessage] = useState(null);
  
-  const dispatch =useDispatch();
+  const dispatch = useDispatch();
 
   //! checking the user request to sign in //sign up and changing accordingly
   const signUpFunction = () => {
     setSignUp(!signup);
    
-;  };
+  };
 
   // Email Validation using validateForm function which check the regex
 

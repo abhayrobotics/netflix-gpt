@@ -27,7 +27,7 @@ const MovieCard = ({ movieItem }) => {
         if (item.id === ID) {
           return item;
         }
-        return ;
+        // return ;
       });
       dispatch(addMovieDetails(filteredList[0]));
     }
