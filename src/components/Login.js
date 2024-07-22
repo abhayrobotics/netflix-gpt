@@ -12,8 +12,8 @@ import { ValidateForm } from "../utils/ValidateForm";
 import { addUser } from "../utils/userSlice";
 import { useDispatch } from "react-redux";
 import { netflixbackground, userAvatar } from "../utils/constant";
-import Information from "./Information";
-import Error from "./Error";
+// import Information from "./Information";
+// import Error from "./Error";
 import Footer from "./Footer";
 
 
