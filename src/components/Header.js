@@ -74,7 +74,7 @@ const Header = () => {
   }, [dispatch, navigate]);
 
   return (
-    <div className=" w-svw overflow-x-hidden">
+    <div className=" w-svw overflow-x-hidden bg-cyan-800">
       {!user && <Information />}
       <div className="  absolute w-screen z-20 py-1 px-16 text-6xl bg-gradient-to-b from-black   items-center flex justify-between flex-col sm:flex-row">
         <Link to="/">

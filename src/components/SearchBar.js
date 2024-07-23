@@ -16,6 +16,7 @@ const SearchBar = () => {
   const searchText = useRef(null);
   const dispatch = useDispatch();
 
+
   // const top_rated = useSelector((store) =>store.movies.top_rated_movies)
 
   // feteching the language from store
@@ -88,7 +89,7 @@ const SearchBar = () => {
             placeholder={lang[choosenLanguage].searchPlaceholder}
           />
           <button
-            className="  w-[20%] bg-red-700 text-white px-6 py-1 m-2 my-2 rounded-sm"
+            className="  w-[20%] bg-red-700 text-white px-3 sm:px-6 py-1 m-2 my-2 rounded-sm"
             onClick={handleSearchRequest}
           >
             {lang[choosenLanguage].search}
