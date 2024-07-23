@@ -70,11 +70,11 @@ const SearchBar = () => {
   };
 
   return (
-    <div>
+    <div className="h-[calc(100svh-157px)]">
       {/* background Image */}
-      <div className="-z-10 fixed top-0">
+      <div className="-z-10 absolute top-0 ">
         <img
-          className="min-h-screen w-[100svw] object-cover "
+          className="h-screen w-[100svw] object-cover "
           src={netflixbackground}
           alt="backgound"
         />
