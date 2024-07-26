@@ -139,7 +139,7 @@ Live Link :https://netflix-abhay.netlify.app/
 -   Error checking-partial done✔️
 -   refresh firebase hosting error -☑️ using rewrite{}
 -   overflow-xscroll ❌
--   Deployment in netifly:
+-   Deployment in netifly: ☑️
     Runtime 
         Not set
     Base directory 
@@ -152,6 +152,9 @@ Live Link :https://netflix-abhay.netlify.app/
         /build
     Functions directory
         /netlify/functions
+
+-   refresh page not found bug in netlify☑️
+     I added a _redirects file inside the /public folder like /public/_redirects. I then pasted /*  /index.html  200 
     
 
 ## Standard proprrties
