@@ -157,7 +157,7 @@ Live Link :https://movieflix-abhay.netlify.app/
      I added a _redirects file inside the /public folder like /public/_redirects. I then pasted /*  /index.html  200 
     
 
-## Standard proprrties
+## Standard properties
 -   text x-margin- mx-8
 -   text y-margin- mx-4
 -   button px-10 py-1
