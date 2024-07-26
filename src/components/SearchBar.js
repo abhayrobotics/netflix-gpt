@@ -71,7 +71,7 @@ const SearchBar = () => {
   };
 
   return (
-    <div className="h-[calc(100svh-157px)]">
+    <div className="">
       {/* background Image */}
       <div className="-z-10 absolute top-0 ">
         <img
