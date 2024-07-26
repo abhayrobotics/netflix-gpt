@@ -1,5 +1,5 @@
 # Netflix GPT
-Live Link :https://netflix-abhay.netlify.app/
+Live Link :https://movieflix-abhay.netlify.app/
 
 [FOR BEST RESULT USE VPN]
 
