@@ -1,5 +1,7 @@
-# Netflix GPT
-Live Link :https://movieflix-abhay.netlify.app/
+# Netflix-GPT
+AI-powered movie recommendation platform built with React, Tailwind, and OpenAI.
+
+🔗 [Live Demo](https://netflix-gpt.vercel.app)
 
 [FOR BEST RESULT USE VPN]
 
@@ -161,6 +163,13 @@ Live Link :https://movieflix-abhay.netlify.app/
 -   text x-margin- mx-8
 -   text y-margin- mx-4
 -   button px-10 py-1
+
+  ## 🤝 Contributing
+Open to PRs and feedback. Feel free to fork and improve!
+
+## 📄 License
+MIT
+
 
 
 
