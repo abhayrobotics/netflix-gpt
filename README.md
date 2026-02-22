@@ -1,3 +1,146 @@
+# 🎬 Netflix AI – Smart Movie Recommendation Platform
+
+A modern Netflix-inspired web application that provides **AI-powered movie recommendations**, real-time search, and a seamless browsing experience using modern frontend technologies.
+
+---
+
+## 🚀 Live Demo
+
+🔗 https://movieflix-abhay.netlify.app/
+
+## 💻 GitHub Repository
+
+🔗 https://github.com/abhayrobotics/netflix-gpt
+
+---
+
+## 📌 Overview
+
+Netflix AI is a full-featured movie streaming UI that integrates **AI-based recommendations** with real-time movie data. The application focuses on delivering a smooth user experience with optimized performance and scalable architecture.
+
+---
+
+## ✨ Features
+
+* 🔐 **User Authentication** (Firebase Auth)
+* 🌐 **Multilingual Support**
+* 🔍 **AI-Powered Search & Recommendations** (Gemini API)
+* 🎥 **Real-time Movie Data Integration** (TMDB API)
+* ⚡ **Fast & Responsive UI**
+* 🔄 **Dynamic Routing & Navigation**
+* 📱 **Fully Responsive Design**
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend:**
+
+* React.js
+* Redux Toolkit
+* React Router DOM
+* Tailwind CSS
+
+**Backend / Services:**
+
+* Firebase Authentication
+* TMDB API
+* Gemini AI API
+
+**Tools:**
+
+* Vite
+* Git
+* Vercel (Deployment)
+
+---
+
+## 🏗️ Architecture & Design
+
+The application follows a **component-based architecture** with centralized state management:
+
+* **Redux Toolkit** for global state handling
+* **Reusable UI components** for scalability
+* **API abstraction layer** for clean data fetching
+* **Separation of concerns** between UI and business logic
+
+---
+
+## ⚙️ Key Implementations
+
+* Implemented **AI-driven recommendation system** using Gemini API
+* Optimized API calls to reduce unnecessary re-renders
+* Used **Redux store slicing** for better state organization
+* Built **custom reusable components** for maintainability
+* Implemented **lazy loading and routing optimization**
+
+---
+
+## 🧠 Challenges & Learnings
+
+* Handling asynchronous API calls efficiently
+* Managing global state across multiple components
+* Designing scalable folder structure for large apps
+* Integrating AI API with real-time UI updates
+
+---
+
+## 📸 Screenshots
+
+![plot](./screenshot.png)
+
+## 📦 Installation & Setup
+
+```bash
+# Clone the repository
+git clone https://github.com/abhayrobotics/netflix-gpt.git
+
+# Navigate to project folder
+cd netflix-gpt
+
+# Install dependencies
+npm install
+
+# Start development server
+npm run dev
+```
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file and add:
+
+```
+VITE_TMDB_API_KEY=your_tmdb_api_key
+VITE_GEMINI_API_KEY=your_gemini_api_key
+```
+
+---
+
+## 📈 Future Improvements
+
+* Add watchlist & user preferences
+* Implement video streaming support
+* Improve recommendation accuracy
+* Add unit and integration tests
+
+---
+
+## 👨‍💻 Author
+
+**Abhay Kumar Gupta**
+
+* GitHub: https://github.com/abhayrobotics
+* LinkedIn: https://linkedin.com/in/developerabhay
+
+---
+
+## ⭐ If you like this project
+
+Give it a ⭐ on GitHub and feel free to contribute!
+
+<!--
 # Netflix-GPT
 AI-powered movie recommendation platform built with React, Tailwind, and OpenAI.
 
@@ -176,4 +319,5 @@ MIT
 ## pending features
 -   icons
 -   video controls- mute
--   video trailer for eah movie shown 
+-   video trailer for each movie shown 
+ -->
